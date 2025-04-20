@@ -137,7 +137,7 @@ class UIHandler(idaapi.UI_Hooks):
             idaapi.attach_action_to_popup(form, popup, CStyle16Action.get_name(), 'Convert all bytes to/')
             idaapi.attach_action_to_popup(form, popup, CStyle32Action.get_name(), 'Convert all bytes to/')
 
-class Plugin(ida_idaapi.plugin_t):
+class StrConv(ida_idaapi.plugin_t):
     flags = ida_idaapi.PLUGIN_PROC
     comment = "Convert bytes to selected string type in .rdata"
     wanted_name = "StrConv"
@@ -179,4 +179,4 @@ class Plugin(ida_idaapi.plugin_t):
         print(f"Website: {self.website}")
 
 def PLUGIN_ENTRY():
-    return Plugin()
+    return StrConv()
