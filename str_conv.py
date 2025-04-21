@@ -50,9 +50,9 @@ class ActionManager(ida_kernwin.action_handler_t):
         if ea != idaapi.BADADDR:
             success = idaapi.create_strlit(ea, 0, self._STR_TYPE)
             if success:
-                print(f"Successfully created string at 0x{ea:X}")
+                print(f"[+] Successfully created string at 0x{ea:X}")
             else:
-                print(f"Failed to create string at 0x{ea:X}")
+                print(f"[-] Failed to create string at 0x{ea:X}")
             idaapi.refresh_idaview_anyway()
         return 1
 
